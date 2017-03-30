@@ -10,14 +10,8 @@ subject(:player2) {described_class.new("JJ")}
   end
 
   it "expects player's hp to be reduced by 10 after an attack" do
-    player1.reduce_hp
-    expect{player1.reduce_hp}.to change{player1.hp}.by(-10)
-
-  end
-
-  it "allows a player to attack another player" do
-
-    expect{player1.attack(player2)}.to change{player2.hp}.by(-10)
+    player1.receive_damage
+    expect{player1.receive_damage}.to change{player1.hp}.by(-10)
 
   end
 

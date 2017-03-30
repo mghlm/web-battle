@@ -8,12 +8,8 @@ class Player
     @hp = hp
   end
 
-  def reduce_hp
+  def receive_damage
     self.hp -= 10
-  end
-
-  def attack(attacked_player)
-    attacked_player.reduce_hp
   end
 
   private
