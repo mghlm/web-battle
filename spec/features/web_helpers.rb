@@ -5,3 +5,9 @@ def sign_in_and_play
   fill_in('player2_name', :with => 'JJ')
   click_button('Submit')
 end
+
+def player_2_start_turn
+  sign_in_and_play
+  click_button('Attack')
+  click_button('Ok')
+end

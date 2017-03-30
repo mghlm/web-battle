@@ -1,4 +1,11 @@
 <iframe src="//giphy.com/embed/xTiTnoHt2NwerFMsCI" width="480" height="269.6629213483146" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/wwe-john-cena-super-saiyan-xTiTnoHt2NwerFMsCI"></a></p>
-<%=@game.player_1.named%> attacked <%=@game.player_2.named%>
+<%=@game.attacked_player.named%> attacked <%=@game.attacking_player.named%>
 </br>
+<%=@game.player_1.named%> HP:<%=@game.player_1.hp%>
+
 <%=@game.player_2.named%> HP:<%=@game.player_2.hp%>
+
+
+<form action="/play" method="get">
+  <input type="submit" value="Ok">
+</form>

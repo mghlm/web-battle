@@ -14,6 +14,10 @@ describe Game do
       expect(game.player_2).to eq player_2
     end
 
+    it 'attacked player is player 2 at start' do
+      expect(game.attacked_player).to eq player_2
+    end
+
     it 'attacking player is player_1 as default' do
       expect(game.attacking_player).to eq player_1
     end
@@ -31,6 +35,8 @@ describe Game do
       expect(player_2).to receive(:receive_damage)
       game.attack(player_2)
     end
+
+
   end
 
 end

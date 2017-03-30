@@ -19,7 +19,12 @@ class Game
   end
 
   def switch_player
-    self.attacking_player = players.select do |player|
+    self.attacking_player = attacked_player
+
+  end
+
+  def attacked_player
+    players.select do |player|
       player != attacking_player
     end.first
   end
