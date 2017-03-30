@@ -1,7 +1,7 @@
-<h1> <%=@player1_name%> clocking in to kick some a$$ </h1>
-<h1> <%=@player2_name%> back in the game for some major carnage </h1>
+<h1> <%=@player1.named%> clocking in to kick some a$$ </h1>
+<h1> <%=@player2.named%> back in the game for some major carnage </h1>
 
-<%=@player2_name%>: 20HP
+<%=@player2.named%>: <%=@player2.hp%>HP
 
 <form action="/attack">
   <input type='submit' value="Attack">
