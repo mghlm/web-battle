@@ -2,6 +2,8 @@
 <h1> <%=@game.player_2.named%> back in the game for some major carnage </h1>
 
 <%=@game.player_2.named%>: <%=@game.player_2.hp%>HP
+</br>
+<%= @game.attacking_player.named %>'s turn
 
 <form action="/attack">
   <input type='submit' value="Attack">
