@@ -1,5 +1,7 @@
 <h1> <%=@game.player_1.named%> clocking in to kick some a$$ </h1>
 <h1> <%=@game.player_2.named%> back in the game for some major carnage </h1>
+<%= @game.lose_message(@game.player_2.named) if @game.player_2.hp <= 0 %>
+
 
 <%=@game.player_1.named%>: <%=@game.player_1.hp%>HP
 <%=@game.player_2.named%>: <%=@game.player_2.hp%>HP

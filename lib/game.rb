@@ -16,6 +16,7 @@ class Game
 
   def attack(attacked_player)
     attacked_player.receive_damage
+    lose_message(attacked_player) if attacked_player.hp <= 0
   end
 
   def switch_player
@@ -27,6 +28,10 @@ class Game
     players.select do |player|
       player != attacking_player
     end.first
+  end
+
+  def lose_message(loser)
+    "#{loser} loses!"
   end
 
   private
