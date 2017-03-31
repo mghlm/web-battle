@@ -2,8 +2,9 @@ require 'game'
 
 describe Game do
   subject(:game) {described_class.new(player_1, player_2)}
-  let(:player_1) {double(:player)}
-  let(:player_2) {double(:player)}
+  let(:player_1) {double(:player, hp: 100)}
+  let(:player_2) {double(:player, hp: 100)}
+  let(:dead_player) {double(:player, hp: 0)}
 
   describe 'initialize' do
     it 'initializes with a new player 1' do
@@ -32,10 +33,10 @@ describe Game do
 
   describe '#attack' do
     it "allows a player to attack another player" do
-      allow(player_2).to receive(:hp) {10}
       expect(player_2).to receive(:receive_damage)
       game.attack(player_2)
     end
+  end
 
   describe '#lose_message' do
     it "puts losing message for loser" do
@@ -43,19 +44,11 @@ describe Game do
     end
 
     it "puts losing message only if attacked player HP is 0" do
-      allow(player_2).to receive(:hp) {0}
-      allow(player_2).to receive(:receive_damage)
-      expect(game.attack(player_2)).to eq "#{player_2} loses!"
+      allow(dead_player).to receive(:receive_damage)
+      expect(game.attack(dead_player)).to eq "#{dead_player} loses!"
     end
-
-    # it "displays lose message when player's HP is 0" do
-    #   allow(player_2).to receive(:hp) {0}
-    #   allow(player_2).to receive(:receive_damage) {nil}
-    #   expect(game).to receive(:lose_message)
-    #   game.attack(player_2)
-    # end
   end
 
-  end
+
 
 end

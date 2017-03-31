@@ -11,3 +11,8 @@ def player_2_start_turn
   click_button('Attack')
   click_button('Ok')
 end
+
+def attack_and_confirm
+  click_button 'Attack'
+  click_button 'Ok'
+end 
